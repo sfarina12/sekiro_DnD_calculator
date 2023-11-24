@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title> For The Dark Soul </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/index.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <fullScreen id="inizializzazione" style="top: 5px;">
+            <master-container>
+                <field-text id="field_name" class="tmp" style="display: flex; flex-direction: column; gap: 12px;">
+                    <div class="btn" id="btn_addPlayer">Aggiungi un partecipante</div>
+                    <p style="color: wheat; font-size: 46px; margin: 0; font-family: system-ui; font-weight: 500;" id="nome">nome player</p>
+                    <input type="text" id="txt_playerv" placeholder="Vita concentrata"/>
+                    <input type="text" id="txt_playersb" placeholder="Stabilita"/>
+                    <input type="text" id="txt_playerpp" placeholder="Percezione P."/>
+                </field-text>
+
+                <div class="btn" style="text-decoration: none; width: 44%;display:none" id="btn_startBattle">Che la lotta abbia inizio!</div></a>
+            </master-container>
+        </fullScreen>
+        <master-container  id="game"  style="display: none;">
+            <div id="blattleground">
+                <div id="blattlegroundWall">
+                    <div id="player_table">
+                        <div id="player_4"> <img src="img/andream.png">   <div pl='0' style="height: 38%; margin-top: -159%;"></div> </div>
+                        <div id="player_1"> <img src="img/valeria.png">   <div pl='2' style="height: 101px; margin-top: -151%; margin-left: 14%;"></div> </div>
+                        <div id="boss"    > <img src="img/dm.png">        <div pl='4' style="height: 89px; margin-top: -150%; margin-left: 11%"></div> </div>
+                        <div id="player_3"> <img src="img/andreal.png">   <div pl='1' style="height: 83px; margin-top: -164%;"></div> </div>
+                        <div id="player_2"> <img src="img/francesco.png"> <div pl='3' style="height: 73px; margin-top: -137%;"></div> </div>
+                    </div>
+                    
+                   <div class="bar" plsb="0" act="" style="top: 32%;">Bellfire<life><txt></txt><img style="display:none" src="img/estus.png"></life><div class="stability_bar"><div class="inner_stability"><input type="text"></div></div></div>
+                   <div class="bar" plsb="2" act="" style="top: 33%; left: 22%;">Alethra<life><txt></txt><img style="display:none"  src="img/estus.png"></life><div class="stability_bar"><div class="inner_stability"><input type="text"></div></div></div>
+                   <div class="bar" plsb="1" act="" style="top: 26%; left: 61%;">Hexpiros<life><txt></txt><img style="display:none"  src="img/estus.png"></life><div class="stability_bar"><div class="inner_stability"><input type="text"></div></div></div>
+                   <div class="bar" plsb="3" act="" style="top: 25%; left: 79%;">Craig<life><txt></txt><img style="display:none"  src="img/estus.png"></life><div class="stability_bar"><div class="inner_stability"><input type="text"></div></div></div>
+                   <div class="bar" plsb="4" act="" style="top: -5%;  left: 45%;">Sir Alonne<life><txt></txt><img style="display:none"  src="img/estus.png"></life><div class="stability_bar"><div class="inner_stability"><input type="text"></div></div></div>
+                    
+                </div>
+                <div class="btn" style="width: 18%; margin: auto; margin-top: 88px;" id="btn_startBtl">Lotta</div>
+            </div>
+            
+        </master-container>
+        <fullScreen  id="game_2" style="display: none;">
+            <floatingValues><aa></aa><bb></bb></floatingValues>
+            <div class="btn" style="width: 18%; margin: auto; margin-bottom: -50px; z-index: 99; position: relative;" id="btn_endBtl">Fine</div>
+            <master-container style="flex-direction: row; justify-content: space-evenly; top: 32%; color: wheat; font-family: system-ui; font-size: 183px;">
+                <div class="fighters" id="player_att">
+                    <img id='img_att' src="img/andream.png">
+                </div>
+                vs
+                <div class="fighters" id="player_def">
+                    <img id='img_def' src="img/andream.png">
+                    <div class="dice_list">
+                        <img dice="4"   src="img/d4.png">
+                        <img dice="10"  src="img/d10.png">
+                        <img dice="20"  src="img/d20.png">
+                        <img dice="100" src="img/d100.png">
+                    </div>
+                </div>
+            </master-container>
+            <master-container style="top: 20%; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-evenly;">
+                <field-text id="field_name" style="background-color: #b32525;">
+                    <div class="btn" id="base_att">?</div><text class="plus hidden">+</text>
+                    <div class="btn hidden" id="cal_att">-</div>
+                    <div class="btn" style="display: none;" id="result_att">?</div>
+                    <input type="text" style="width:217px" id="txt_att" placeholder="Attacca!"/>
+                </field-text>
+                <div class="btn" id="btn_fight">Fight</div>
+                <field-text id="field_name" style="background-color: #3a7d3a">
+                    <div class="btn" id="base_def">?</div><text class="plus hidden">+</text> 
+                    <div class="btn hidden" id="cal_def">-</div>
+                    <div class="btn" style="display: none;" id="result_def">?</div>
+                    <input type="text" style="width:217px" id="txt_def" placeholder="Difenditi!"/>
+                </field-text>
+            </master-container>
+            <master-container id="game_bar">
+                <div style="background-color: #212121;  width: 83px;"  value="-9"><img  src="img/bandream.png"></div>
+                <div style="background-color: #df2929;  width: 332px;" value="-8"><img src="img/bandream.png"></div>
+                <div style="background-color: orange;   width: 166px;" value="-5"><img src="img/bandream.png"></div>
+                <div style="background-color: #e3e341;  width: 249px;" value="-3"><img src="img/bandream.png"></div>
+                <div style="background-color: #339f33;  width: 83px;"  value="0"><img  src="img/bandream.png"></div>
+                <div style="background-color: #e3e341;  width: 249px;" value="3"><img src="img/bandream.png"></div>
+                <div style="background-color: orange;   width: 166px;" value="5"><img src="img/bandream.png"></div>
+                <div style="background-color: #df2929;  width: 332px;" value="8"><img src="img/bandream.png"></div>
+                <div style="background-color: #212121;  width: 83px; " value="9"><img  src="img/bandream.png"></div>
+            </master-container>
+        </fullScreen>
+    </body>
+    <script src="js/battle.js"></script>
+</html>
